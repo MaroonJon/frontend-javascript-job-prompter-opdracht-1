@@ -71,4 +71,67 @@ const departments = {
     }
 }
 
+
 console.log(departments);
+
+
+const choose = "Je koos";
+const descriptionMarketing = departments.marketing.description;
+const descriptionSales = departments.sales.description;
+const descriptionCS = departments["customer-service"].description;
+
+
+const userInput = prompt('Over welke afdeling wil je meer informatie? Kies uit: [marketing / sales / customer-service]');
+if (userInput === "marketing") {
+    window.alert(choose + " " + userInput + "." + " " + descriptionMarketing);
+} else if (userInput === "sales") {
+    window.alert(choose + " " + userInput + "." + " " + descriptionSales);
+} else if (userInput === "customer service") {
+    window.alert(choose + " " + userInput + "." + " " + descriptionCS);
+} else console.error("Ongeldige keuze. Probeer het opnieuw door de pagina te verversen.");
+
+
+// const marketingInput = prompt(`Je koos marketing. Over welke functie wil je meer weten? Voer een getal tussen 0 en 4 in. \n 0: ${departments.marketing.jobs[0].title}  \n 1: ${departments.marketing.jobs[1].title}  \n 2: ${departments.marketing.jobs[2].title}  \n 3: ${departments.marketing.jobs[3].title}  \n 4: ${departments.marketing.jobs[4].title} `);
+// console.log(marketingInput);
+// if (marketingInput >= 5) console.error("Ongeldige keuze. Probeer het opnieuw door de pagina te verversen.")
+
+
+console.log(`${userInput} is een leuke afdeling om te werken. Er werken op dit moment ${departments[userInput].numberOfEmployees} medewerkers.`);
+
+const departDescriptionOption = prompt("Je koos" + ' ' + userInput + ' ' + "Over welke functie wil je meer weten? Voer een getal tussen 1 en" + " " + departments[userInput].jobs.length + " " + "in." + '\n ' +
+    '1:' + ' ' + departments[userInput].jobs[0].title + '\n ' +
+    '2:' + ' ' + departments[userInput].jobs[1].title + '\n ' +
+    '3:' + ' ' + departments[userInput].jobs[2].title + '\n ' +
+    '4:' + ' ' + departments[userInput].jobs[3].title + '\n ');
+
+if (departDescriptionOption === "1") {
+    console.log(departments[userInput].jobs[0].description)
+    document.getElementById('department-description').textContent = departments[userInput].description;
+    document.getElementById('role-title').textContent = departments[userInput].jobs[0].title;
+    document.getElementById('role-description').textContent = departments[userInput].jobs[0].description;
+} else if (departDescriptionOption === "2") {
+    console.log(departments[userInput].jobs[1].description)
+    document.getElementById('department-description').textContent = departments[userInput].description;
+    document.getElementById('role-title').textContent = departments[userInput].jobs[1].title;
+    document.getElementById('role-description').textContent = departments[userInput].jobs[1].description;
+} else if (departDescriptionOption === "3") {
+    console.log(departments[userInput].jobs[2].description)
+    document.getElementById('department-description').textContent = departments[userInput].description;
+    document.getElementById('role-title').textContent = departments[userInput].jobs[2].title;
+    document.getElementById('role-description').textContent = departments[userInput].jobs[2].description;
+} else if (departDescriptionOption === "4") {
+    console.log(departments[userInput].jobs[3].description)
+    document.getElementById('department-description').textContent = departments[userInput].description;
+    document.getElementById('role-title').textContent = departments[userInput].jobs[3].title;
+    document.getElementById('role-description').textContent = departments[userInput].jobs[3].description;
+} else if (departDescriptionOption >= 5) {
+    console.error("Ongeldige keuze. Probeer het opnieuw door de pagina te verversen.");
+    document.getElementById('role-description').textContent = "Ongeldige keuze. Probeer het opnieuw door de pagina te verversen.";
+
+}
+console.log(departDescriptionOption);
+
+
+
+
+
